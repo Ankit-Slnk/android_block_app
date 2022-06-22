@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAskPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Give USAGE STATS Permission" />
+
+    <LinearLayout
+        android:id="@+id/llViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnGetInstalledApps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get List of installed apps" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchInstagram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instagram" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Facebook" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchWhatsApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WhatsApp" />
+
+    </LinearLayout>
+
+</LinearLayout>
