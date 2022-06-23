@@ -28,7 +28,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnAskPermission, btnGetInstalledApps;
+    Button btnAskPermission, btnGetInstalledApps, btnCloseApp;
     LinearLayout llViews;
     SharedPreferences sharedPreferences;
     SwitchCompat switchInstagram, switchFacebook, switchWhatsApp;
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         switchInstagram = findViewById(R.id.switchInstagram);
         switchFacebook = findViewById(R.id.switchFacebook);
         switchWhatsApp = findViewById(R.id.switchWhatsApp);
+        btnCloseApp = findViewById(R.id.btnCloseApp);
 
         btnAskPermission.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,9 +104,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(MainActivity.this)) {
-            Utility.askOverlayPermission(MainActivity.this);
-        }
+        btnCloseApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(startMain);
+            }
+        });
     }
 
     public void setSharedPreference(String key, boolean value) {

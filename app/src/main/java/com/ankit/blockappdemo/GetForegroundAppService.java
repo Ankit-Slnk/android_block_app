@@ -69,10 +69,6 @@ public class GetForegroundAppService extends Service {
 
     public void closeApp(String packageName) {
         Toast.makeText(GetForegroundAppService.this, "App Close", Toast.LENGTH_SHORT).show();
-//        Intent startMain = new Intent(Intent.ACTION_MAIN);
-//        startMain.addCategory(Intent.CATEGORY_HOME);
-//        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(startMain);
 
         Intent i = new Intent(GetForegroundAppService.this, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
